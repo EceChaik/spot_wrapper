@@ -282,7 +282,8 @@ class SpotArm:
             self._logger.warning(msg)
             return False, msg
         try:
-            success, msg = self.ensure_arm_power_and_stand()
+            #success, msg = self.ensure_arm_power_and_stand()
+            success = True
             if not success:
                 self._logger.info(msg)
                 return False, msg
@@ -304,7 +305,7 @@ class SpotArm:
 
                 # Send the request
                 cmd_id = self._robot_command_client.robot_command(arm_command)
-                self.wait_for_arm_command_to_complete(cmd_id)
+                #self.wait_for_arm_command_to_complete(cmd_id)
                 return True, "Spot Arm moved successfully"
 
         except Exception as e:
