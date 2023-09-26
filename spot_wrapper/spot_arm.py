@@ -242,6 +242,7 @@ class SpotArm:
         return RobotCommandBuilder.build_synchro_command(arm_sync_robot_cmd)
 
     def arm_joint_move(self, joint_targets) -> typing.Tuple[bool, str]:
+        # DIMITRIS WAS HERE
         # All perspectives are given when looking at the robot from behind after the unstow service is called
         # Joint1: 0.0 arm points to the front. positive: turn left, negative: turn right)
         # RANGE: -3.14 -> 3.14
